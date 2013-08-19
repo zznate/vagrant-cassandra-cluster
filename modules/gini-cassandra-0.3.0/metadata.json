@@ -1,0 +1,45 @@
+{
+  "name": "gini-cassandra",
+  "version": "0.3.0",
+  "source": "https://github.com/gini/puppet-cassandra",
+  "author": "Jochen Schalanda",
+  "license": "Apache 2.0",
+  "summary": "Puppet module to install Apache Cassandra from the DataStax distribution",
+  "description": "A Puppet module to install the DataStax Community edition using the official repositories.",
+  "project_page": "https://github.com/gini/puppet-cassandra",
+  "dependencies": [
+    {
+      "name": "puppetlabs/stdlib",
+      "version_requirement": ">= 3.0.0"
+    },
+    {
+      "name": "puppetlabs/apt",
+      "version_requirement": "1.x"
+    }
+  ],
+  "types": [
+
+  ],
+  "checksums": {
+    "Gemfile": "296418e7800cf4ce40bd039654afa3cb",
+    "LICENSE-2.0.txt": "3b83ef96387f14655fc854ddc3c6bd57",
+    "Modulefile": "432c167ed2f0b5e4d598bffbe9ae2d85",
+    "README.md": "0014c3791a1ca0c1407970bc3d5d08e9",
+    "Rakefile": "d0a7bcdb74658217895c7f13d3f4b1de",
+    "manifests/config.pp": "fc9a3314414b9fe9b3d1147f3674a8c0",
+    "manifests/init.pp": "2e8ade0b446a34eecfa59440a1543307",
+    "manifests/install.pp": "4bfa7f40cfb2f556894d3b0ef49787e0",
+    "manifests/params.pp": "25cc5d957bd39f17594ab7f5d7c614ca",
+    "manifests/repo/debian.pp": "e70157415e69e84e9a68828bc085839f",
+    "manifests/repo/redhat.pp": "9dbb641cc76955e9a155066c42105bc1",
+    "manifests/repo.pp": "ef942dc79cbc8c2596b93d3ac4df6b39",
+    "manifests/service.pp": "26d9761ae4c25299460eab0664a82958",
+    "spec/classes/cassandra_config_spec.rb": "72a860000639d6ce3b5820c624af5ff6",
+    "spec/classes/cassandra_repo_spec.rb": "d2fde60f9b8a1969a07ef337319a78dd",
+    "spec/classes/cassandra_spec.rb": "7c541ad490d551e37e361ac23b6b26de",
+    "spec/spec_helper.rb": "31443cbb31de764aac79186cbc17689f",
+    "templates/cassandra-env.sh.erb": "a815a0b852e8cbcc7e91de9c2b499436",
+    "templates/cassandra.yaml.erb": "fce2d090fffba9dbbd4db7e805e97e67",
+    "tests/init.pp": "04b020e5355f0a137fef76b6aaa8935b"
+  }
+}
