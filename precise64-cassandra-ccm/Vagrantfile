@@ -1,0 +1,26 @@
+# Builds on the stock precise64.box to add Oracle's JDK7.
+# We then add ant and a few python tools to enable the use of 
+# Cassandra Cluster Manager (CCM)
+#
+Vagrant.configure("2") do |config|
+  config.vm.box = "ccm-multi-precise64"
+  #config.vm.box_url = "https://s3-us-west-2.amazonaws.com/tlp-vagrant-boxes/ccm-multi-precise64.box"
+  config.vm.box_url = "/Users/zznate/vagrant-boxes/ccm-multi-precise64.box"
+
+  config.vm.define "ccm_cluster" do |ccm_cluster|
+    ccm_cluster.vm.hostname = "ccm-cluster"
+    ccm_cluster.vm.network "private_network", ip: "192.168.33.11"
+    ccm_cluster.vm.network "private_network", ip: "192.168.33.12"
+    ccm_cluster.vm.network "private_network", ip: "192.168.33.13"
+    ccm_cluster.vm.network "forwarded_port", guest: 9160, guest_ip: "192.168.33.11", host: 9161
+    ccm_cluster.vm.network "forwarded_port", guest: 9160, guest_ip: "192.168.33.12", host: 9162
+    ccm_cluster.vm.network "forwarded_port", guest: 9160, guest_ip: "192.168.33.13", host: 9163
+  end
+
+  # box specific parameters like memory and CPU
+  config.vm.provider :virtualbox do |vb|
+    vb.customize ["modifyvm", :id, "--memory", "2048"]
+  end
+
+end
+
