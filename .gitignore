@@ -1,4 +1,5 @@
 .idea
+*.box
 .vagrant
 .DS_Store
 hector.iml
